@@ -53,7 +53,7 @@
 
 [project]
 site_name = "Docs" # CUSTOM: Set the name that appears in the browser tab.
-site_url = "https://jugurthakacimi.github.io/nlp-06-nlp-pipeline/"
+site_url = "https://jugurthakacimi.github.io/nlp-06-nlp-pipeline"
 repo_url = "https://github.com/jugurthakacimi/nlp-06-nlp-pipeline"
 repo_name = "nlp-06-nlp-pipeline"
 site_description = "Project Documentation" # CUSTOM: Set the description.
