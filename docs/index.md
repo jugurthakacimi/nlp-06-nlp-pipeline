@@ -98,9 +98,9 @@ The pipeline produced the following results:
 - `data/processed/jugurtha_top_tokens.png` - displays a bar chart of the 25 most frequent tokens in the processed text.
 - `data/processed/jugurtha_wordcloud.png` - shows a word cloud visualization of the processed text, highlighting the most prominent terms
 
-![Top 25 tokens](/data/processed/jugurtha_top_tokens.png)
+![Top 25 tokens](images/jugurtha_top_tokens.png)
 
-![Word cloud](/data/processed/jugurtha_wordcloud.png)
+![Word cloud](images/jugurtha_wordcloud.png)
 
 ## Interpretation
 
