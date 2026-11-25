@@ -58,6 +58,8 @@ import logging
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import nltk
+from nltk.stem import WordNetLemmatizer
 import pandas as pd
 from wordcloud import WordCloud
 
@@ -234,6 +236,17 @@ def run_analyze(
     # Split the space-joined token string back into a list
     tokens: list[str] = tokens_str.split() if tokens_str else []
 
+    # Use lemmatization to reduce words to their base form, which can help in analyzing the frequency of concepts rather than just word forms.
+    nltk.download("wordnet")
+    lemmatizer = WordNetLemmatizer()
+
+    tokens: list[str] = [lemmatizer.lemmatize(token) for token in tokens]
+
+    tokens: list[str] = [token for token in tokens if len(token) > 2]
+
+    # Recreate the tokens_str after lemmatization and filtering for logging purposes
+    tokens_str: str = " ".join(tokens)
+
     LOG.info(f"  Paper: {title}")
     LOG.info(f"  Abstract word count (raw):    {abstract_word_count}")
     LOG.info(f"  Token count (clean):          {token_count}")
@@ -259,7 +272,7 @@ def run_analyze(
     _plot_top_tokens(
         tokens=tokens,
         top_n=top_n,
-        output_path=output_dir / "case_top_tokens.png",
+        output_path=output_dir / "jugurtha_top_tokens.png",
         title=f"Top {top_n} Tokens: {title}",
         LOG=LOG,
     )
@@ -281,7 +294,7 @@ def run_analyze(
 
     _plot_wordcloud(
         text=tokens_str,
-        output_path=output_dir / "case_wordcloud.png",
+        output_path=output_dir / "jugurtha_wordcloud.png",
         title=f"Word Cloud: {title}",
         LOG=LOG,
     )
