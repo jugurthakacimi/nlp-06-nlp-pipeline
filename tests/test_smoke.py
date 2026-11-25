@@ -56,5 +56,5 @@ def test_nlp_stages_write_features_figures_and_csv(monkeypatch, tmp_path):
     assert saved.loc[0, "author_count"] == 2
     assert saved.loc[0, "token_count"] > 0
     assert 0 < saved.loc[0, "type_token_ratio"] <= 1
-    assert (output_dir / "case_top_tokens.png").stat().st_size > 0
-    assert (output_dir / "case_wordcloud.png").stat().st_size > 0
+    assert (output_dir / "jugurtha_top_tokens.png").stat().st_size > 0
+    assert (output_dir / "jugurtha_wordcloud.png").stat().st_size > 0
