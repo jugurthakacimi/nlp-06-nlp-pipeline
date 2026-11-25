@@ -49,7 +49,7 @@ The project is configured in
 ## Data
 
 The example retrieves an academic paper's abstract page
-from [arXiv](https://arxiv.org/abs/2602.20021).
+from [arXiv](https://arxiv.org/abs/2611.32073).
 
 The source document contains:
 
@@ -120,7 +120,7 @@ The project uses [spaCy](https://spacy.io/)
 for tokenization and for flagging
 stopwords and punctuation.
 
-The example uses the `en_core_web_sm`
+The project uses the `en_core_web_sm`
 small English trained pipeline.
 
 The package is declared in
@@ -170,20 +170,20 @@ Pipeline executed successfully!
 The following files are created:
 
 - `project.log` - pipeline execution log.
-- `data/raw/case_raw.html` - original HTML document.
-- `data/processed/case_processed.csv` - processed NLP dataset.
-- `data/processed/case_top_tokens.png` - token frequency bar chart.
-- `data/processed/case_wordcloud.png` - word cloud visualization.
+- `data/raw/jugurtha_raw.html` - original HTML document.
+- `data/processed/jugurtha_processed.csv` - processed NLP dataset.
+- `data/processed/jugurtha_top_tokens.png` - token frequency bar chart.
+- `data/processed/jugurtha_wordcloud.png` - word cloud visualization.
 
 These artifacts provide evidence of successful
 data acquisition, validation, transformation,
 analysis, and persistence.
 
-### Example Visualizations
+### Visualizations
 
-![Top Tokens](docs/images/case_top_tokens.png)
+![Top 25 tokens](/data/processed/jugurtha_top_tokens.png)
 
-![Word Cloud](docs/images/case_wordcloud.png)
+![Word cloud](/data/processed/jugurtha_wordcloud.png)
 
 ## Verification
 

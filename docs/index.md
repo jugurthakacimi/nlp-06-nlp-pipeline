@@ -60,6 +60,12 @@ and other derived text features.
 The Analyze stage produces a token frequency chart
 and a word cloud.
 
+## Custom Modifications
+
+1. The pipeline parses the HTML document from the arXiv abstract page for the paper **"Efficient Semantic ORDER BY via Transitivity-Aware LLM Batch Sorting"** *(arXiv ID: 2611.32073)*.
+2. The pipeline was modified to output the 25 most frequent tokens in a bar chart instead of the top 20. With this change, I am expecting the the data/processed/jugurtha_top_tokens.png to show 25 tokens instead of 20.
+3. The pipeline was modified to include lemmatization of tokens using NLTK's WordNetLemmatizer. This change is expected to reduce the number of unique tokens and provide a more accurate representation of the vocabulary used in the text.
+
 ## Verification
 
 A successful execution displays:
@@ -82,30 +88,25 @@ and persist web text data.
 Automated tests provide additional verification
 of the pipeline's expected behavior.
 
+## Results
+
+The pipeline produced the following results:
+
+- `data/processed/jugurtha_processed.csv` - contains the processed NLP dataset with token counts, unique token counts, type-token ratios, and other derived text features.
+  - 241 abstract words were extracted from the HTML document.
+  - 163 token counts with 123 unique tokens were identified, resulting in a type-token ratio of 0.7546.
+- `data/processed/jugurtha_top_tokens.png` - displays a bar chart of the 25 most frequent tokens in the processed text.
+- `data/processed/jugurtha_wordcloud.png` - shows a word cloud visualization of the processed text, highlighting the most prominent terms
+
+![Top 25 tokens](../data/processed/jugurtha_top_tokens.png)
+
+![Word cloud](../data/processed/jugurtha_wordcloud.png)
+
 ## Interpretation
 
-Natural language processing requires
-more than extracting text from documents.
-
-Text must be represented in ways
-that support meaningful analysis.
-
-Token frequencies describe recurring vocabulary,
-while unique token counts and type-token ratios
-provide measures of vocabulary diversity.
-
-Visualizations help reveal dominant terms
-and suggest questions for further investigation.
-
-Preprocessing decisions affect these results.
-Removing punctuation, normalizing text,
-and filtering stopwords may reduce noise,
-but can also remove meaningful linguistic information.
-
-These techniques remain relevant
-for inspectable NLP workflows,
-even as modern language models provide
-additional approaches to language understanding.
+- The pipeline successfully extracted and processed the text from the HTML document, producing a dataset with 241 abstract words. After text preprocessing and tokenization, 163 tokens were identified, of which 123 were unique.
+- This resulted in a type-token ratio (TTR) of 0.7546, indicating relatively high lexical diversity, as approximately 75% of the identified tokens were unique. The top 25 tokens visualization provides insight into the most frequently occurring terms, while the word cloud offers a visual representation of the dominant vocabulary
+- Overall, the results demonstrate how NLP techniques can transform unstructured HTML content into structured text data and generate useful insights into its vocabulary and word frequency distribution.
 
 ## Documentation Index
 
@@ -116,11 +117,11 @@ additional approaches to language understanding.
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/denisecase/nlp-06-nlp-pipeline)
-- [Example Pipeline](https://github.com/denisecase/nlp-06-nlp-pipeline/blob/main/src/nlp/pipeline_web_html.py)
-- [Example Configuration](https://github.com/denisecase/nlp-06-nlp-pipeline/blob/main/src/nlp/config.py)
-- [Transform Stage](https://github.com/denisecase/nlp-06-nlp-pipeline/blob/main/src/nlp/stage03_transform.py)
-- [Analyze Stage](https://github.com/denisecase/nlp-06-nlp-pipeline/blob/main/src/nlp/stage04_analyze.py)
+- [GitHub Repository](https://github.com/jugurthakacimi/nlp-06-nlp-pipeline)
+- [Example Pipeline](https://github.com/jugurthakacimi/nlp-06-nlp-pipeline/blob/main/src/nlp/pipeline_web_html.py)
+- [Example Configuration](https://github.com/jugurthakacimi/nlp-06-nlp-pipeline/blob/main/src/nlp/config.py)
+- [Transform Stage](https://github.com/jugurthakacimi/nlp-06-nlp-pipeline/blob/main/src/nlp/stage03_transform.py)
+- [Analyze Stage](https://github.com/jugurthakacimi/nlp-06-nlp-pipeline/blob/main/src/nlp/stage04_analyze.py)
 
 ## Project Resources
 

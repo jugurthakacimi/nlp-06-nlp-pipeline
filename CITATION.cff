@@ -15,13 +15,13 @@ title: "Web Mining and Applied NLP 06: EVTAL NLP Pipeline"
 date-released: "2026-04-02"
 
 authors:
-  - family-names: Case
-    given-names: Denise M.
-    orcid: "https://orcid.org/0000-0001-6165-7389"
+  - family-names: Jugurtha
+    given-names: Kacimi
+    orcid: "https://orcid.org/0000-0000-0000-0000"
     affiliation: "Northwest Missouri State University, USA"
 
-repository-code: "https://github.com/denisecase/nlp-06-nlp-pipeline"
-url: "https://github.com/denisecase/nlp-06-nlp-pipeline"
+repository-code: "https://github.com/jugurthakacimi/nlp-06-nlp-pipeline"
+url: "https://github.com/jugurthakacimi/nlp-06-nlp-pipeline"
 license: MIT
 
 abstract: |
